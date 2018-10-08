@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Dream WooCommerce Setup (and how to achieve it)</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,167 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>The Dream<br/>WooCommerce Setup</h1>
+					<h2>(and how to achieve it)</h2>
+					<p>Starring: Gabor Javorszky</p>
+					<p>aka <a href="https://twitter.com/javorszky">@javorszky</a></p>
+					<p><a href="https://wpcmb2018.j7y.co/">wpcmb2018.j7y.co</a> (these slides)</p>
+				</section>
+				<section>
+					<h1>Context</h1>
+					<p>You: a customer</p>
+					<p>What is it that <i>you</i> want? Forget about what you, as the shop owner want for a moment.</p>
+				</section>
+				<section>
+					<h1>Context</h1>
+					<ul>
+						<li>hate wasting time</li>
+						<li>hate being sold to</li>
+						<li>hate being coerced into things</li>
+						<li>hate being tracked by absolutely everything</li>
+						<li>want to buy the thing on your site though</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Context (cont'd)</h1>
+					<ul>
+						<li>make it easy to pay</li>
+						<li>make it unambiguous to leave required details ("obvious" is not "unambiguous")</li>
+						<li>be secure</li>
+						<li>be safe</li>
+						<li>be able to reach you in case there's a dispute (you're not dodgy)</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Context</h1>
+					<h2>(shop owner)</h2>
+					<ul>
+						<li>make money</li>
+						<li>happy customers => more moeny</li>
+						<li>fast site => more money</li>
+						<li>low maintenance => more profit</li>
+						<li>track some stuff => reach customers</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Balance!</h1>
+				</section>
+				<section>
+					<h1>How not to piss off people</h1>
+				</section>
+				<section>
+					<h1>1. Tracking</h1>
+					<h2>as little as you can get away with</h2>
+					<p>Tracking adds javascript, javascript adds weight, complexity, etc...</p>
+					<p>People also don't like being tracked. And I'm blocking your tracking scripts anyways...</p>
+				</section>
+				<section>
+					<h1>2. Have the simplest design you can get away with</h1>
+					<p>No, you do not need your extra font.</p>
+					<p>No, you do not need fancy transitions.</p>
+					<p>No, you do not need 26 Mb images.</p>
+				</section>
+				<section>
+					<h1>3. Accessibility!</h1>
+					<ul>
+						<li>Do not ignore people with disabilities!</li>
+						<li>ALL different disabilities: sight, sound, motor, cognitive</li>
+						<li>accessibility is also for people who have changed circumstances that are NOT disabilities, for example: mothers with 3 screaming children</li>
+					</ul>
+				</section>
+				<section>
+					<h1>4. No, seriously. Accessibility. Start treating it as a necessary part of your sites!</h1>
+				</section>
+				<section>
+					<h1>5. Do you have an accessible site to at least A standard?</h1>
+					<h2>preferably AA</h2>
+					<p><strong>AAA?</strong></p>
+					<p><a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction">https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction</a></p>
+				</section>
+				<section>
+					<h1>6. Tech</h1>
+					<p>Have an actually competent DNS registrar and host.</p>
+					<p class="fragment">Use HTTPS.</p>
+					<p class="fragment"><strong>more importantly, DO NOT USE HTTP.</strong></p>
+					<p class="fragment">No, it's not faster than HTTPS.</p>
+					<p class="fragment">Yes, even on the pages that have no payment / ecommerce.</p>
+					<p class="fragment">YES, even on the sites that are just blogs.</p>
+				</section>
+				<section>
+					<h1>7. Tech</h1>
+					<ul>
+						<li>Containers!</li>
+						<li class="fragment">Shove all your media off-site (S3)</li>
+						<li class="fragment">You can still use those while developing locally</li>
+						<li class="fragment">No need to download 70 Gb!</li>
+					</ul>
+				</section>
+				<section>
+					<h1>8. Dev</h1>
+					<ul>
+						<li>No shared accounts. Devs get their own details. Better yet, they get invited to accounts.</li>
+						<li class="fragment">Revokation.</li>
+						<li class="fragment">What's your playbook if you don't want to work with someone anymore?</li>
+					</ul>
+				</section>
+				<section>
+					<h1>9. more Dev</h1>
+					<ul>
+						<li>Backups! Have you tested restoration?</li>
+						<li class="fragment">version control system</li>
+						<li class="fragment">automated deployment. Copying to sftp is very 90s.</li>
+						<li class="fragment">Testing?</li>
+					</ul>
+				</section>
+				<section>
+					<h1>10. even more Dev</h1>
+					<ul>
+						<li>When deploying, how long does your site go down?</li>
+						<li class="fragment">Atomic deployments</li>
+						<li class="fragment">Multi-server environments</li>
+					</ul>
+				</section>
+				<section>
+					<h1>11. last Dev</h1>
+					<ul>
+						<li>clean code / code style used / code linting used</li>
+						<li>Modern programming principles (composer)</li>
+						<li>.env files!</li>
+					</ul>
+				</section>
+				<section>
+					<h1>12. Recap</h1>
+					<ul>
+						<li>Fast</li>
+						<li class="fragment">Accessible</li>
+						<li class="fragment">Efficient (not the same as fast)</li>
+						<li class="fragment">Light (not the same as the previous two)</li>
+						<li class="fragment">Secure</li>
+						<li class="fragment">Logical</li>
+					</ul>
+				</section>
+				<section>
+					<h1>13. Links</h1>
+					<ul>
+						<li><a href="https://www.youtube.com/watch?v=r2CbbBLVaPk">The user is drunk (youtube)</a></li>
+						<li><a href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">The cost of Javascript (article)</a></li>
+						<li><a href="https://philipwalton.com/articles/idle-until-urgent/">Idle Until Urgent (article, javascript startup time)</a></li>
+						<li><a href="https://blog.jacklenox.com/2018/06/04/delivering-wordpress-in-7kb/">Delivering WordPress in 7kb (article)</a></li>
+						<li><a href="https://alistapart.com/article/sustainable-web-design">Sustainable Web Design (article)</a></li>
+						<li><a href="https://blog.hubspot.com/marketing/page-load-time-conversion-rates">How page load affects conversion rates (article)</a></li>
+
+					</ul>
+				</section>
+				<section>
+					<h1>11. More links</h1>
+					<ul>
+						<li><a href="https://github.com/Mindsize/wp-project-base">Our project base based on composer (repo)</a></li>
+						<li><a href="https://javorszky.co.uk/2018/07/30/set-up-phpcs-and-wordpress-extra-coding-standards-and-configure-your-ides-to-use-them">How to set up your local environment for code standards (article)</a></li>
+						<li><a href="https://github.com/phpro/grumphp">PHPgrump, a way to make sure your code is clean! (repo)</a></li>
+						<li><a href="https://pmgarman.me/how-to-rewrite-uploads-to-production-from-your-local-environment/">Use remote media while developing locally (article)</a></li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +196,9 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				width: 1280,
+				height: 768,
+				history: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
